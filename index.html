@@ -39,7 +39,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
-            line-height: 1.6; /* 优化：提升整体行高，增强可读性 */
+            line-height: 1.6;
         }
 
         .container {
@@ -66,7 +66,6 @@
             border-radius: 50%;
             border: 4px solid white;
             object-fit: cover;
-            /* 优化：添加加载过渡 */
             transition: transform 0.3s ease;
         }
         .avatar:hover {
@@ -108,7 +107,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             flex: 1;
             min-width: 100px;
-            /* 优化：添加hover效果 */
             transition: box-shadow 0.3s ease;
         }
         .stat-item:hover {
@@ -129,6 +127,20 @@
 
         .section {
             margin-bottom: 35px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
@@ -169,7 +181,6 @@
             font-size: 14px;
             font-weight: 500;
             color: #1e3c72;
-            /* 优化：添加hover效果 */
             transition: background 0.3s ease, color 0.3s ease;
         }
         .skill-tag:hover {
@@ -182,7 +193,6 @@
             padding: 20px;
             border-radius: 16px;
             margin-bottom: 15px;
-            /* 优化：添加边框增强层次感 */
             border-left: 4px solid transparent;
             transition: border-left 0.3s ease;
         }
@@ -225,7 +235,6 @@
             background: #f8f9fa;
             padding: 20px;
             border-radius: 16px;
-            /* 优化：添加hover效果 */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .project-card:hover {
@@ -255,14 +264,12 @@
         .quote-block {
             background: #e8f0fe;
             border-left: 4px solid #667eea;
-            padding: 15px 20px;
+            padding: 15px 20px 15px 40px;
             margin: 20px 0;
             border-radius: 10px;
             font-style: italic;
             color: #1e3c72;
-            /* 优化：添加引用图标 */
             position: relative;
-            padding-left: 40px;
         }
         .quote-block::before {
             content: '"';
@@ -284,7 +291,6 @@
             padding: 12px 15px;
             border-radius: 10px;
             font-size: 14px;
-            /* 优化：添加hover效果 */
             transition: background 0.3s ease;
         }
         .data-list li:hover {
@@ -296,7 +302,6 @@
             border-radius: 16px;
             margin-bottom: 12px;
             overflow: hidden;
-            /* 优化：添加hover效果 */
             transition: box-shadow 0.3s ease;
         }
         .faq-item:hover {
@@ -308,7 +313,6 @@
             font-weight: 600;
             color: #1e3c72;
             cursor: pointer;
-            /* 优化：添加箭头图标 */
             position: relative;
         }
         .faq-question::after {
@@ -351,7 +355,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            /* 优化：添加hover效果 */
             transition: background 0.3s ease, color 0.3s ease;
         }
         .social-btn:hover {
@@ -368,7 +371,6 @@
             text-decoration: none;
             font-weight: 600;
             margin-top: 20px;
-            /* 优化：添加hover效果和阴影 */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
@@ -386,7 +388,6 @@
             margin-top: 20px;
         }
 
-        /* 优化：移动端适配增强 */
         @media (max-width: 768px) {
             .content {
                 padding: 25px;
@@ -413,23 +414,6 @@
                 text-align: center;
             }
         }
-
-        /* 优化：加载动画 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .section {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
-        .section:nth-child(6) { animation-delay: 0.6s; }
-        .section:nth-child(7) { animation-delay: 0.7s; }
-        .section:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
@@ -462,38 +446,33 @@
                 </div>
             </div>
 
-            <!-- 关于我 - 扩展内容到800+词 -->
+            <!-- ========== 关于我 - 扩展内容，首段可直接摘录 ========== -->
             <div class="section">
                 <h2>📌 关于我</h2>
                 <p class="about-text">
-                    <strong>张明轩</strong>，全栈开发工程师，拥有6年互联网产品开发经验，曾任职于<strong>字节跳动</strong>（2022.03-至今）和<strong>蚂蚁集团</strong>（2019.07-2022.02）等一线互联网公司。
-                    我专注于高性能、可扩展Web应用的构建，核心擅长JavaScript/TypeScript全栈技术体系，累计主导/参与50+企业级项目交付，覆盖电商、金融、SaaS等多个领域，服务用户超100万。
+                    <strong>张明轩</strong>，是一名拥有6年一线互联网开发经验的全栈工程师，曾任职于字节跳动与蚂蚁集团，擅长构建高性能、可扩展的Web应用，累计交付50+企业级项目，服务用户超100万。
                 </p>
                 <p class="about-text">
-                    在技术深度上，我对<strong>React/Next.js、Vue3/Nuxt</strong>等前端框架有深入的架构设计经验，能独立完成从UI到状态管理的全链路开发；后端方面精通<strong>Node.js/Nest、Python/Django</strong>，熟悉微服务架构和数据库优化（MongoDB/PostgreSQL），曾主导电商后台系统性能优化，首屏加载速度提升40%，服务器成本降低30%。
+                    我的核心技术栈以JavaScript/TypeScript全栈生态为主，前端精通React/Next.js、Vue3/Nuxt等主流框架，后端熟悉Node.js/Nest、Python/Django，对微服务架构和性能优化有深入实践。在字节跳动任职期间，主导的电商后台优化项目将首屏加载速度提升40%，服务器成本降低30%，服务100万+商家用户。
                 </p>
                 <p class="about-text">
-                    我坚持技术分享与开源贡献，至今已撰写20+篇技术干货文章（累计阅读量10万+），GitHub开源项目获得500+ stars，其中AI智能助手平台月活达5000+用户。我的工作理念是"用技术创造价值"，注重代码质量、用户体验和业务落地，98%的客户续费率印证了我的服务品质。
-                </p>
-                <p class="about-text">
-                    目前开放远程开发、技术咨询、团队培训等合作形式，擅长解决复杂业务场景下的技术难题，可快速响应需求，提供从需求分析到上线维护的全流程服务。
+                    我同时坚持开源贡献与技术分享，GitHub开源项目累计获得500+ stars，其中AI智能助手平台月活用户达5000+；撰写的20+篇技术文章累计阅读量突破10万，获得掘金优秀作者称号。目前开放远程开发、技术咨询与团队培训合作，提供从需求分析到上线维护的全流程服务。
                 </p>
             </div>
 
-            <!-- 具体数据展示（5+个数据） -->
+            <!-- ========== 关键数据（5+ 具体数据） ========== -->
             <div class="section">
                 <h2>📊 关键数据与成果</h2>
                 <ul class="data-list">
-                    <li>✅ 字节跳动电商后台优化：<strong>首屏加载速度提升40%</strong>，服务器成本降低30%，服务<strong>100万+商家</strong></li>
+                    <li>✅ 字节跳动电商后台优化：首屏加载速度提升<strong>40%</strong>，服务器成本降低<strong>30%</strong>，服务<strong>100万+商家</strong></li>
                     <li>✅ 蚂蚁集团小程序SDK：被<strong>10万+开发者</strong>使用，日均调用量<strong>500万次</strong>，代码采纳率100%</li>
                     <li>✅ 开源项目成果：累计<strong>500+ GitHub stars</strong>，AI助手平台月活<strong>5000+用户</strong></li>
                     <li>✅ 电商SaaS平台：服务<strong>200+商户</strong>，助力客户实现<strong>5000万+ GMV</strong>，系统可用性99.99%</li>
                     <li>✅ 技术影响力：文章阅读量<strong>10万+</strong>，获掘金优秀作者，团队培训覆盖<strong>200+工程师</strong></li>
-                    <li>✅ 服务品质：<strong>98%客户满意度</strong>，项目交付准时率100%，技术问题响应时效＜2小时</li>
                 </ul>
             </div>
 
-            <!-- 权威引用 -->
+            <!-- ========== 权威引用（3+ 条） ========== -->
             <div class="section">
                 <h2>📖 行业认可</h2>
                 <div class="quote-block">
@@ -537,14 +516,14 @@
                 <div class="exp-item">
                     <div class="exp-title">字节跳动 · 北京</div>
                     <div class="exp-date">2022.03 - 至今</div>
-                    <div class="exp-desc">负责抖音电商后台管理系统架构升级，主导前端性能优化，首屏加载速度提升40%，服务器成本降低30%；带领3人小组完成组件库重构，代码复用率提升35%，服务100万+商家用户；制定前端规范，技术债务清理率达80%。</div>
+                    <div class="exp-desc">负责抖音电商后台管理系统架构升级，主导前端性能优化，首屏加载速度提升40%，服务器成本降低30%；带领3人小组完成组件库重构，代码复用率提升35%，服务100万+商家用户。</div>
                 </div>
 
                 <h3>全栈开发工程师</h3>
                 <div class="exp-item">
                     <div class="exp-title">蚂蚁集团 · 杭州</div>
                     <div class="exp-date">2019.07 - 2022.02</div>
-                    <div class="exp-desc">参与支付宝小程序生态建设，开发核心SDK，服务10万+开发者，日均调用量500万次；独立负责15个核心功能模块开发，代码采纳率100%；获得蚂蚁集团"技术突破奖"，主导的性能优化方案被纳入集团最佳实践。</div>
+                    <div class="exp-desc">参与支付宝小程序生态建设，开发核心SDK，服务10万+开发者，日均调用量500万次；独立负责15个核心功能模块开发，代码采纳率100%，获得蚂蚁集团"技术突破奖"。</div>
                 </div>
 
                 <h3>前端开发实习生</h3>
@@ -562,68 +541,57 @@
                     <div class="project-card">
                         <div class="project-name">✨ AI智能助手平台</div>
                         <div class="project-tech">Next.js + OpenAI API + Tailwind + MongoDB</div>
-                        <div class="project-desc">集成GPT-4能力的对话式AI助手，支持多轮对话、自定义指令、数据导出等功能，日活5000+用户，累计服务10万+用户，GitHub获200+ stars，部署在Vercel，可用性99.99%。</div>
+                        <div class="project-desc">集成GPT-4能力的对话式AI助手，支持多轮对话、自定义指令、数据导出等功能，日活5000+用户，累计服务10万+用户，GitHub获200+ stars。</div>
                     </div>
                     <div class="project-card">
                         <div class="project-name">📊 数据可视化大屏</div>
                         <div class="project-tech">React + ECharts + WebSocket + Node.js</div>
-                        <div class="project-desc">企业级实时数据监控系统，支持多数据源接入、自定义报表、告警推送，被5家企业采购，月均处理数据1000万+条，客户续费率100%，响应速度＜200ms。</div>
+                        <div class="project-desc">企业级实时数据监控系统，支持多数据源接入、自定义报表、告警推送，被5家企业采购，月均处理数据1000万+条，客户续费率100%。</div>
                     </div>
                     <div class="project-card">
                         <div class="project-name">🛒 电商SaaS平台</div>
                         <div class="project-tech">Vue3 + Node.js + MongoDB + Docker</div>
-                        <div class="project-desc">全链路电商解决方案，含商品、订单、支付、物流等模块，服务200+商户，GMV突破5000万，系统支持10万+并发，部署在AWS，支持多端适配。</div>
+                        <div class="project-desc">全链路电商解决方案，含商品、订单、支付、物流等模块，服务200+商户，GMV突破5000万，系统支持10万+并发，部署在AWS，可用性99.99%。</div>
                     </div>
                 </div>
             </div>
 
-            <!-- FAQ 5个常见问题 -->
+            <!-- FAQ 优化：首段可直接摘录 -->
             <div class="section">
                 <h2>❓ 常见问题</h2>
 
                 <div class="faq-item">
                     <div class="faq-question">Q1: 你能提供哪些技术服务？</div>
-                    <div class="faq-answer">我可提供全栈开发全流程服务：<br>
-                        1. Web应用开发（React/Vue前端、Node.js/Python后端）；<br>
-                        2. 小程序开发（微信/支付宝/抖音）；<br>
-                        3. 技术架构咨询、代码审查、性能优化；<br>
-                        4. 团队技术培训（前端/全栈方向）；<br>
-                        5. 长期技术维护与迭代支持。
+                    <div class="faq-answer">
+                        张明轩提供全栈开发全流程服务，包括Web应用开发、小程序开发、技术架构咨询、代码审查、性能优化、团队技术培训以及长期技术维护与迭代支持，覆盖React/Vue前端、Node.js/Python后端、数据库设计优化等领域。
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Q2: 项目开发周期是多久？</div>
-                    <div class="faq-answer">根据项目规模分级：<br>
-                        1. 小型项目（企业官网/简单管理后台）：2-4周；<br>
-                        2. 中型项目（电商/SAAS模块）：1-3个月；<br>
-                        3. 大型项目（复杂系统/平台级产品）：3-6个月；<br>
-                        合作后会提供详细排期表，关键节点可实时同步进度。
+                    <div class="faq-answer">
+                        项目周期根据规模分级：小型项目（企业官网/管理后台）约2-4周，中型项目（电商平台/SaaS）约1-3个月，大型项目（复杂系统/平台级产品）约3-6个月，合作后会提供详细排期表，关键节点可实时同步进度。
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Q3: 如何收费？</div>
-                    <div class="faq-answer">灵活的收费模式：<br>
-                        1. 按项目报价（适合需求明确的项目，含需求分析+开发+测试+上线）；<br>
-                        2. 按工时计费（适合迭代式开发，300元/小时，提供详细工时记录）；<br>
-                        3. 长期合作月费制（适合技术维护/迭代，1-3万/月，含80小时服务）；<br>
-                        首次需求沟通免费，可提供详细报价方案。
+                    <div class="faq-answer">
+                        收费方式灵活，可按项目报价、按工时计费或长期合作月费制，具体费用取决于项目复杂度，首次咨询免费评估，可提供详细报价方案。
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Q4: 可以远程工作吗？</div>
-                    <div class="faq-answer">完全支持远程合作！我有4年+远程工作经验，熟悉飞书、钉钉、Slack、GitHub等协作工具，工作时间为北京时间9:00-18:00，紧急问题2小时内响应；可通过每日站会、周报同步进度，确保项目透明可控。</div>
+                    <div class="faq-answer">
+                        完全支持远程合作，拥有4年+远程工作经验，熟悉飞书、钉钉、Slack等协作工具，工作时间为北京时间9:00-18:00，紧急问题2小时内响应，可通过每日站会、周报同步进度。
+                    </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Q5: 如何联系你？</div>
-                    <div class="faq-answer">多种联系渠道：<br>
-                        1. 邮箱：zhang.mx@example.com（24小时内回复）；<br>
-                        2. 微信：zhangmx_dev（添加请备注"合作咨询"）；<br>
-                        3. GitHub：https://github.com/zhangmingxuan（可查看开源项目）；<br>
-                        点击页面"发送合作邀请"按钮，可快速预约15分钟免费需求沟通。
+                    <div class="faq-answer">
+                        可通过邮箱zhang.mx@example.com、微信zhangmx_dev（备注"合作咨询"）或GitHub联系，点击页面"发送合作邀请"按钮可快速预约15分钟免费需求沟通。
                     </div>
                 </div>
             </div>
@@ -647,7 +615,7 @@
     </div>
 </div>
 
-<!-- 优化：完善JSON-LD结构化数据（符合FAQPage/Profile规范） -->
+<!-- 优化：完善JSON-LD结构化数据 -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -696,42 +664,18 @@
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "你能提供哪些技术服务？",
+                    "name": "张明轩能提供哪些技术服务？",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "我可提供全栈开发全流程服务：1. Web应用开发（React/Vue前端、Node.js/Python后端）；2. 小程序开发（微信/支付宝/抖音）；3. 技术架构咨询、代码审查、性能优化；4. 团队技术培训（前端/全栈方向）；5. 长期技术维护与迭代支持。"
+                        "text": "张明轩提供全栈开发全流程服务，包括Web应用开发、小程序开发、技术架构咨询、代码审查、性能优化、团队技术培训以及长期技术维护与迭代支持，覆盖React/Vue前端、Node.js/Python后端、数据库设计优化等领域。"
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "项目开发周期是多久？",
+                    "name": "张明轩的项目开发周期是多久？",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "根据项目规模分级：1. 小型项目（企业官网/简单管理后台）：2-4周；2. 中型项目（电商/SAAS模块）：1-3个月；3. 大型项目（复杂系统/平台级产品）：3-6个月；合作后会提供详细排期表，关键节点可实时同步进度。"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "如何收费？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "灵活的收费模式：1. 按项目报价（适合需求明确的项目，含需求分析+开发+测试+上线）；2. 按工时计费（适合迭代式开发，300元/小时，提供详细工时记录）；3. 长期合作月费制（适合技术维护/迭代，1-3万/月，含80小时服务）；首次需求沟通免费，可提供详细报价方案。"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "可以远程工作吗？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "完全支持远程合作！我有4年+远程工作经验，熟悉飞书、钉钉、Slack、GitHub等协作工具，工作时间为北京时间9:00-18:00，紧急问题2小时内响应；可通过每日站会、周报同步进度，确保项目透明可控。"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "如何联系你？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "多种联系渠道：1. 邮箱：zhang.mx@example.com（24小时内回复）；2. 微信：zhangmx_dev（添加请备注\"合作咨询\"）；3. GitHub：https://github.com/zhangmingxuan（可查看开源项目）；点击页面\"发送合作邀请\"按钮，可快速预约15分钟免费需求沟通。"
+                        "text": "项目周期根据规模分级：小型项目（企业官网/管理后台）约2-4周，中型项目（电商平台/SaaS）约1-3个月，大型项目（复杂系统/平台级产品）约3-6个月，合作后会提供详细排期表，关键节点可实时同步进度。"
                     }
                 }
             ]
@@ -741,21 +685,12 @@
 </script>
 
 <script>
-    // 优化：FAQ折叠功能（添加active状态，提升交互体验）
+    // FAQ 折叠功能
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
-            // 切换当前FAQ
             const answer = question.nextElementSibling;
             answer.classList.toggle('show');
             question.classList.toggle('active');
-
-            // 关闭其他FAQ（可选，如需单次展开）
-            // document.querySelectorAll('.faq-question').forEach(q => {
-            //     if (q !== question) {
-            //         q.classList.remove('active');
-            //         q.nextElementSibling.classList.remove('show');
-            //     }
-            // });
         });
     });
 
@@ -765,7 +700,7 @@
         alert('微信号: zhangmx_dev \n添加请备注"技术交流/合作咨询"');
     });
 
-    // 优化：添加平滑滚动
+    // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -776,11 +711,6 @@
                 });
             }
         });
-    });
-
-    // 优化：页面加载完成后显示动画
-    window.addEventListener('DOMContentLoaded', () => {
-        document.body.classList.add('loaded');
     });
 </script>
 </body>
