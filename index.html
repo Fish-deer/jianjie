@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>林语晨 · 创意前端开发者 | 个人简介</title>
+
+    <!-- SEO 基础标签 -->
+    <title>张明轩 | 全栈开发工程师 - 6年经验技术专家</title>
+    <meta name="description" content="张明轩，全栈开发工程师，6年互联网大厂经验，擅长React、Vue、Node.js技术栈。已交付50+企业级项目，提供技术咨询与开发服务。">
+    <meta name="keywords" content="全栈开发,前端开发,个人简介,技术博客,项目合作,张明轩">
+    <meta name="author" content="张明轩">
+    <link rel="canonical" href="https://my-portfolio.vercel.app">
+
+    <!-- 主题色 -->
+    <meta name="theme-color" content="#667eea">
+
+    <!-- 图标 -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:title" content="张明轩 | 全栈开发工程师">
+    <meta property="og:description" content="6年经验全栈开发，50+项目交付，欢迎技术交流与项目合作">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ui-avatars.com/api/?background=667eea&color=fff&size=200&name=Zhang">
+
     <style>
         * {
             margin: 0;
@@ -12,519 +31,474 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(145deg, #f4f7fc 0%, #e9eef4 100%);
-            color: #1a2634;
-            line-height: 1.5;
-            padding: 2rem 1.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        /* 主容器 */
         .container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* 全局卡片风格 */
-        .card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(2px);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px -14px rgba(0, 0, 0, 0.08);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.12);
+        .profile-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        /* 头部英雄区 */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            padding: 2rem 2.2rem;
-            margin-bottom: 2rem;
+        .header-bg {
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            padding: 40px 40px 80px 40px;
+            text-align: center;
         }
-        .avatar-box {
-            flex-shrink: 0;
-            position: relative;
-        }
+
         .avatar {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 4px solid white;
-            box-shadow: 0 18px 28px -12px rgba(0, 0, 0, 0.2);
-            background: #b3c7e3;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
         }
-        .status-badge {
-            position: absolute;
-            bottom: 8px;
-            right: 5px;
-            background: #0f2b3d;
+
+        .name {
             color: white;
-            border-radius: 40px;
-            padding: 4px 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            backdrop-filter: blur(4px);
-            background: rgba(15, 43, 61, 0.85);
-        }
-        .intro h1 {
-            font-size: 2.8rem;
+            font-size: 32px;
+            margin-top: 20px;
             font-weight: 700;
-            letter-spacing: -0.01em;
-            background: linear-gradient(130deg, #1a3e50, #2c6280);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.3rem;
         }
-        .tagline {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #2c6280;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 0.7rem;
+
+        .title {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-top: 8px;
         }
-        .bio-text {
-            color: #2c3e44;
-            max-width: 580px;
-            font-size: 0.98rem;
-            margin-top: 0.25rem;
-        }
-        .btn-group {
-            margin-top: 1.3rem;
-            display: flex;
-            gap: 0.9rem;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+
+        .content {
+            padding: 40px;
             background: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 60px;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 0.9rem;
-            border: 1px solid #cfdfed;
-            transition: all 0.2s;
-            color: #1f3e4c;
-        }
-        .btn-primary {
-            background: #1f3e4c;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 10px rgba(31,62,76,0.2);
-        }
-        .btn-primary:hover {
-            background: #123141;
-            transform: translateY(-2px);
-        }
-        .btn-outline:hover {
-            background: #eaf1f8;
-            border-color: #b6cfdf;
-            transform: translateY(-2px);
         }
 
-        /* 两栏网格 */
-        .two-columns {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 2rem;
-            margin: 1.5rem 0 1rem;
-        }
-
-        /* 通用区块内边距 */
-        .section-pad {
-            padding: 1.8rem 2rem;
-            height: 100%;
-        }
-        .section-title {
-            font-size: 1.55rem;
-            font-weight: 650;
-            margin-bottom: 1.5rem;
+        .stats {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            border-left: 5px solid #2c6280;
-            padding-left: 1rem;
-        }
-        .section-title i {
-            color: #2c6280;
-            font-size: 1.4rem;
-        }
-
-        /* 技能标签组 */
-        .skill-cloud {
-            display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-top: 0.5rem;
-        }
-        .skill {
-            background: #e8f0f7;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e4a65;
-            transition: 0.1s;
-            border: 1px solid #d4e2ef;
-        }
-        .skill:hover {
-            background: #d4e2ef;
-            transform: scale(0.97);
+            gap: 20px;
+            margin-top: -40px;
+            margin-bottom: 30px;
         }
 
-        /* 条目样式 */
-        .exp-item, .project-item {
-            margin-bottom: 1.7rem;
+        .stat-item {
+            background: white;
+            padding: 20px 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 120px;
         }
-        .exp-header, .project-header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.2rem;
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2a5298;
         }
-        .exp-title, .project-title {
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 24px;
             font-weight: 700;
-            font-size: 1.05rem;
-            color: #1f3e4c;
-        }
-        .exp-sub, .project-stack {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #4a6f85;
-        }
-        .exp-date {
-            font-size: 0.75rem;
-            color: #6f8ea3;
-        }
-        .exp-desc, .project-desc {
-            font-size: 0.9rem;
-            color: #2e4759;
-            margin-top: 0.4rem;
-            line-height: 1.45;
-        }
-        .light-divider {
-            height: 1px;
-            background: linear-gradient(to right, #cbdbe0, transparent);
-            margin: 1rem 0;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
         }
 
-        /* 社交区域 */
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2a5298;
+            margin: 20px 0 10px 0;
+        }
+
+        .about-text {
+            color: #444;
+            line-height: 1.8;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: #f0f2f5;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e3c72;
+        }
+
+        .exp-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: #1e3c72;
+        }
+
+        .exp-company {
+            color: #667eea;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+
+        .exp-date {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .exp-desc {
+            color: #555;
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 17px;
+            color: #1e3c72;
+        }
+
+        .project-tech {
+            color: #667eea;
+            font-size: 12px;
+            margin: 8px 0;
+        }
+
+        .project-desc {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* FAQ 样式 */
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: #f0f2f5;
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #1e3c72;
+            cursor: pointer;
+        }
+        .faq-answer {
+            padding: 15px 20px;
+            color: #555;
+            line-height: 1.6;
+            display: none;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+
         .social-links {
             display: flex;
-            gap: 1.2rem;
-            margin: 1.2rem 0 1rem;
+            gap: 15px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
-        .social-icon {
-            background: #eef3fa;
-            width: 46px;
-            height: 46px;
+
+        .social-btn {
+            background: #f0f2f5;
+            padding: 12px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            color: #1f3e4c;
-            font-size: 1.5rem;
-            transition: all 0.2s;
-            text-decoration: none;
-            border: 1px solid #cde0ec;
-        }
-        .social-icon:hover {
-            background: #1f3e4c;
-            color: white;
-            transform: translateY(-4px);
+            gap: 8px;
         }
 
-        .info-tile {
-            background: #f4fafd;
-            border-radius: 1.2rem;
-            padding: 0.9rem 1.2rem;
-            margin-top: 1.2rem;
-        }
-        .footer-note {
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: #5b7e95;
-            border-top: 1px solid #d4e2ef;
-            padding-top: 2rem;
-        }
-        .vercel-tag {
-            background: #eef2f5;
+        .contact-btn {
             display: inline-block;
-            border-radius: 32px;
-            padding: 0.2rem 1rem;
-            font-family: monospace;
-            font-size: 0.7rem;
+            background: linear-gradient(120deg, #667eea, #764ba2);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
         }
 
-        /* 响应式 */
-        @media (max-width: 720px) {
-            body {
-                padding: 1rem;
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 25px;
             }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
+            .header-bg {
+                padding: 30px 20px 60px;
             }
-            .intro h1 {
-                font-size: 2rem;
+            .name {
+                font-size: 26px;
             }
-            .btn-group {
-                justify-content: center;
-            }
-            .section-title {
-                justify-content: center;
-                border-left: none;
-                border-bottom: 2px solid #cde0ec;
-                padding-bottom: 0.4rem;
+            h2 {
+                font-size: 20px;
             }
         }
     </style>
-    <!-- Font Awesome 6 (免费图标库) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="container">
-    <!-- 英雄卡片 -->
-    <div class="card hero">
-        <div class="avatar-box">
-            <img class="avatar" src="https://ui-avatars.com/api/?background=2c6280&color=fff&rounded=true&bold=true&size=150&fontsize=0.70&name=Yuchen+Lin" alt="林语晨头像" onerror="this.src='https://randomuser.me/api/portraits/women/68.jpg'">
-            <div class="status-badge"><i class="fas fa-code"></i> 创意开发者</div>
-        </div>
-        <div class="intro">
-            <h1>林语晨 · Yuchen Lin</h1>
-            <div class="tagline">
-                <i class="fas fa-mug-hot"></i> 前端架构师 · 开源爱好者
-                <span style="font-size:0.75rem;">✦ 6年全栈经验</span>
-            </div>
-            <p class="bio-text">
-                热爱设计感与工程效率并重的技术产品。专注于 React / Vue 生态、跨端解决方案与 Node.js 服务端渲染。
-                相信优雅的代码能传递温度，乐于分享并持续构建让人愉悦的 Web 体验。
-            </p>
-            <div class="btn-group">
-                <a href="mailto:yuchen.lin@dev.me" class="btn btn-primary"><i class="far fa-paper-plane"></i> 联系合作</a>
-                <a href="#" id="resumeDownload" class="btn btn-outline"><i class="fas fa-download"></i> 简历摘要</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- 双栏内容 -->
-    <div class="two-columns">
-        <!-- 左侧：技能栈 + 工作经历 -->
-        <div>
-            <!-- 技术能力卡片 -->
-            <div class="card section-pad" style="margin-bottom: 1.8rem;">
-                <div class="section-title">
-                    <i class="fas fa-cubes"></i>
-                    <span>技术栈 · 工具箱</span>
-                </div>
-                <div class="skill-cloud">
-                    <span class="skill">JavaScript (ES6+)</span>
-                    <span class="skill">TypeScript</span>
-                    <span class="skill">React / Next.js</span>
-                    <span class="skill">Vue3 / Nuxt</span>
-                    <span class="skill">Node.js (Nest/Koa)</span>
-                    <span class="skill">Tailwind / SCSS</span>
-                    <span class="skill">Webpack / Vite</span>
-                    <span class="skill">Prisma / MongoDB</span>
-                    <span class="skill">Git / GitHub Actions</span>
-                    <span class="skill">Vercel / Netlify</span>
-                </div>
-            </div>
-
-            <!-- 工作经历卡片 -->
-            <div class="card section-pad">
-                <div class="section-title">
-                    <i class="fas fa-briefcase"></i>
-                    <span>工作经历</span>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-title">资深前端工程师 @ 智绘科技</span>
-                        <span class="exp-date">2022.03 – 至今</span>
-                    </div>
-                    <div class="exp-sub">杭州 · 架构组</div>
-                    <div class="exp-desc">负责低代码搭建平台核心模块重构，采用React + TS + Redux Toolkit，提升组件复用率40%；主导组件库文档站点基于Storybook + Vercel 自动部署，团队开发效率显著提高。</div>
-                </div>
-                <div class="light-divider"></div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-title">全栈开发工程师 @ 云创互动</span>
-                        <span class="exp-date">2019.07 – 2022.01</span>
-                    </div>
-                    <div class="exp-sub">上海 · 产研事业部</div>
-                    <div class="exp-desc">开发并维护一体化内容管理后台，基于Vue3 + Pinia + NestJS，实现动态表单引擎及数据可视化看板，日均请求量10w+，获得年度技术创新奖。</div>
-                </div>
-                <div class="light-divider"></div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-title">前端开发 (实习) @ 奇点工作室</span>
-                        <span class="exp-date">2018.09 – 2019.05</span>
-                    </div>
-                    <div class="exp-desc">参与企业官网及H5活动页面开发，实现SSR优化首屏速度，积累现代前端工程化基础。</div>
-                </div>
-            </div>
+    <div class="profile-card">
+        <div class="header-bg">
+            <img class="avatar" src="https://ui-avatars.com/api/?background=ffffff&color=2a5298&rounded=true&bold=true&size=140&fontsize=0.70&name=Zhang+Mingxuan" alt="张明轩头像">
+            <h1 class="name">张明轩 · Zhang Mingxuan</h1>
+            <p class="title">🚀 全栈开发工程师 | 技术布道者 | 开源贡献者</p>
         </div>
 
-        <!-- 右侧：项目精选 + 社交档案 -->
-        <div>
-            <!-- 项目精选卡片 -->
-            <div class="card section-pad" style="margin-bottom: 1.8rem;">
-                <div class="section-title">
-                    <i class="fas fa-star-of-life"></i>
-                    <span>开源项目 · 代表作</span>
+        <div class="content">
+            <!-- 统计数字 -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">年开发经验</div>
                 </div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <span class="project-title">✦ Atlas 可视化组件库</span>
-                        <span class="project-stack"><i class="fab fa-react"></i> React + Storybook</span>
-                    </div>
-                    <div class="project-desc">企业级React组件库，提供30+ 可定制组件，支持暗黑主题与动态国际化，已被5个以上内部项目采用，GitHub 收获 400+ star。</div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">完成项目</div>
                 </div>
-                <div class="light-divider"></div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <span class="project-title">✦ SwiftBlog 全栈博客系统</span>
-                        <span class="project-stack"><i class="fab fa-node-js"></i> Next.js + Sanity</span>
-                    </div>
-                    <div class="project-desc">现代化的技术博客平台，集成 MDX 与实时预览，SEO 友好且性能极佳，在 Vercel 上实现毫秒级响应，每月服务约1.2w访问者。</div>
-                </div>
-                <div class="light-divider"></div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <span class="project-title">✦ 「羽」组件市场</span>
-                        <span class="project-stack"><i class="fab fa-vuejs"></i> Vue3 + Vite</span>
-                    </div>
-                    <div class="project-desc">轻量级组件预览与可视化调试工具，支持在线代码片段导出，获2024 前端领域优秀开源工具体验奖。</div>
-                </div>
-                <div class="skill-cloud" style="margin-top: 1rem;">
-                    <span class="skill"><i class="fab fa-github"></i> github.com/yuchenlin</span>
-                    <span class="skill"><i class="fas fa-cloud-upload-alt"></i> vercel即点即部署</span>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">客户满意度</div>
                 </div>
             </div>
 
-            <!-- 社交与联系卡片 -->
-            <div class="card section-pad">
-                <div class="section-title">
-                    <i class="fas fa-heart"></i>
-                    <span>保持连接 · 一起创造</span>
+            <!-- 关于我 - 扩展内容到500+词 -->
+            <div class="section">
+                <h2>📌 关于我</h2>
+                <p class="about-text">
+                    张明轩，全栈开发工程师，拥有6年互联网产品开发经验，曾任职于字节跳动和蚂蚁集团等一线互联网公司。
+                    我热爱编程和创造，擅长构建高性能、可扩展的Web应用，注重代码质量与用户体验。
+                </p>
+                <p class="about-text">
+                    在技术领域，我专注于JavaScript/TypeScript全栈生态，对React、Vue等前端框架有深入研究，
+                    同时具备Node.js、Python后端开发能力。我相信技术能够改变生活，乐于分享知识，持续学习前沿技术，
+                    并积极参与开源社区建设。至今已累计撰写20+篇技术文章，在GitHub上拥有多个开源项目。
+                </p>
+                <p class="about-text">
+                    我的工作理念是："写出优雅的代码，创造有价值的产品"。无论是初创项目还是大型企业级应用，
+                    我都能提供专业的技术解决方案。目前开放远程工作机会和技术咨询服务，欢迎与我联系。
+                </p>
+            </div>
+
+            <!-- 核心技术 -->
+            <div class="section">
+                <h2>⚙️ 核心技术栈</h2>
+                <div class="skills">
+                    <span class="skill-tag">JavaScript/TypeScript</span>
+                    <span class="skill-tag">React/Next.js</span>
+                    <span class="skill-tag">Vue3/Nuxt</span>
+                    <span class="skill-tag">Node.js/Nest</span>
+                    <span class="skill-tag">Python/Django</span>
+                    <span class="skill-tag">HTML5/CSS3</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">MongoDB/PostgreSQL</span>
+                    <span class="skill-tag">Docker/Git</span>
+                    <span class="skill-tag">Vercel/AWS</span>
                 </div>
+            </div>
+
+            <!-- 工作经历 -->
+            <div class="section">
+                <h2>💼 工作经历</h2>
+
+                <h3>资深前端工程师</h3>
+                <div class="exp-item">
+                    <div class="exp-title">字节跳动 · 北京</div>
+                    <div class="exp-date">2022.03 - 至今</div>
+                    <div class="exp-desc">负责抖音电商后台管理系统架构升级，优化首屏加载速度40%，带领3人小组完成组件库重构，服务百万级商家用户。</div>
+                </div>
+
+                <h3>全栈开发工程师</h3>
+                <div class="exp-item">
+                    <div class="exp-title">蚂蚁集团 · 杭州</div>
+                    <div class="exp-date">2019.07 - 2022.02</div>
+                    <div class="exp-desc">参与支付宝小程序生态建设，开发核心SDK，服务百万级开发者；获得团队技术突破奖，累计交付15个核心功能模块。</div>
+                </div>
+
+                <h3>前端开发实习生</h3>
+                <div class="exp-item">
+                    <div class="exp-title">网易 · 广州</div>
+                    <div class="exp-date">2018.06 - 2019.06</div>
+                    <div class="exp-desc">参与云音乐Web端开发，完成多个高难度页面交互，熟悉React生态与工程化实践，获得"优秀实习生"称号。</div>
+                </div>
+            </div>
+
+            <!-- 项目经验 -->
+            <div class="section">
+                <h2>🌟 精选项目</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-name">✨ AI智能助手平台</div>
+                        <div class="project-tech">Next.js + OpenAI API + Tailwind</div>
+                        <div class="project-desc">集成GPT能力的对话式AI助手，支持多轮对话和自定义场景，日活用户5000+，累计服务10万+用户。</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-name">📊 数据可视化大屏</div>
+                        <div class="project-tech">React + ECharts + WebSocket</div>
+                        <div class="project-desc">实时数据监控大屏系统，支持动态图表更新，被5家企业采购使用，月均处理数据量1000万+条。</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-name">🛒 电商SaaS平台</div>
+                        <div class="project-tech">Vue3 + Node.js + MongoDB</div>
+                        <div class="project-desc">全栈电商解决方案，包含商品、订单、会员等完整模块，累计服务200+商户，GMV突破5000万。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 常见问题 - 增强SEO -->
+            <div class="section">
+                <h2>❓ 常见问题</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q1: 你能提供哪些技术服务？</div>
+                    <div class="faq-answer">我可以提供全栈开发服务，包括：Web应用开发、小程序开发、技术架构咨询、代码审查、团队技术培训等。擅长React/Vue前端项目、Node.js/Python后端服务、数据库设计优化。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q2: 项目开发周期一般是多久？</div>
+                    <div class="faq-answer">根据项目复杂度不同，小型项目（企业官网/管理后台）约2-4周，中型项目（电商平台/SaaS系统）约1-3个月，大型项目需要根据具体需求评估。我会提供详细的项目排期计划。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q3: 如何联系你开始合作？</div>
+                    <div class="faq-answer">你可以通过页面上的邮箱联系我，或者点击"发送合作邀请"按钮。我会在24小时内回复，安排详细的需求沟通会议。初次咨询免费。</div>
+                </div>
+            </div>
+
+            <!-- 联系方式 -->
+            <div class="section">
+                <h2>📫 联系我</h2>
                 <div class="social-links">
-                    <a href="https://github.com/yuchenlin" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/yuchen_dev" target="_blank" class="social-icon" aria-label="X"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/in/yuchen-lin" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" id="wechatMockBtn" class="social-icon" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
-                    <a href="mailto:yuchen.lin@dev.me" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-btn">🐙 GitHub</a>
+                    <a href="#" class="social-btn">🐦 Twitter</a>
+                    <a href="#" class="social-btn">📧 邮箱</a>
+                    <a href="#" id="wechatBtn" class="social-btn">💬 微信</a>
                 </div>
-                <div class="info-tile">
-                    <i class="fas fa-map-pin" style="margin-right: 6px; color:#1f6d8c;"></i>
-                    <span> 数字游牧 · 目前 base 杭州/上海 | 远程友好</span>
-                    <div style="margin-top: 8px;">
-                        <i class="far fa-clock"></i>  UTC+8 · 通常2小时内回复
-                    </div>
-                </div>
-                <div class="btn-group" style="margin-top: 1.5rem;">
-                    <a href="https://cal.com/yuchen-tech" target="_blank" class="btn btn-outline" style="flex:1; justify-content:center;"><i class="fas fa-calendar-week"></i> 预约技术交流</a>
-                </div>
+                <a href="#" class="contact-btn">📩 发送合作邀请 →</a>
             </div>
         </div>
-    </div>
 
-    <!-- 优雅寄语 + Vercel 原生部署提示 -->
-    <div class="card" style="margin-top: 2rem; padding: 1rem 2rem; background: rgba(255, 252, 240, 0.7); text-align: center; border: 1px solid #e7edf2;">
-        <p style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            <i class="fas fa-feather-alt" style="color:#2c6280;"></i>
-            <span> 「 简洁 · 专注 · 迭代 」 本页已完全封装，一键部署 Vercel 即可全球分发</span>
-            <code style="background:#eef2fa; padding:0.2rem 0.8rem; border-radius: 30px;">vercel --prod</code>
-        </p>
-    </div>
-
-    <div class="footer-note">
-        <div class="vercel-tag">
-            <i class="fas fa-globe"></i> 完全自包含 — HTML5 / CSS3 / 原生JS | 快速部署至 Vercel
+        <div class="footer">
+            <p>© 2025 张明轩 · 全栈开发工程师 | 本页面支持部署到 Vercel | 数据更新于2025年</p>
         </div>
-        <p style="margin-top: 0.7rem;">© 2025 林语晨 · 开放式简历 | 所有项目均为真实实践方向 | 可联系获取完整履历</p>
     </div>
 </div>
 
+<!-- JSON-LD 结构化数据 -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "张明轩",
+    "alternateName": "Zhang Mingxuan",
+    "jobTitle": "全栈开发工程师",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "字节跳动"
+    },
+    "url": "https://my-portfolio.vercel.app",
+    "image": "https://ui-avatars.com/api/?background=667eea&color=fff&size=200&name=Zhang",
+    "email": "zhang.mx@example.com",
+    "sameAs": [
+        "https://github.com/zhangmx",
+        "https://twitter.com/zhangmx_dev"
+    ],
+    "knowsAbout": ["JavaScript", "TypeScript", "React", "Vue", "Node.js", "Python", "全栈开发"],
+    "workExperience": [
+        {
+            "@type": "WorkExperience",
+            "name": "字节跳动",
+            "position": "资深前端工程师",
+            "startDate": "2022-03",
+            "endDate": "至今"
+        },
+        {
+            "@type": "WorkExperience",
+            "name": "蚂蚁集团",
+            "position": "全栈开发工程师",
+            "startDate": "2019-07",
+            "endDate": "2022-02"
+        }
+    ]
+}
+</script>
+
 <script>
-    (function() {
-        // 优雅轻提示 (无需额外依赖)
-        function showMessage(msg, duration = 2600) {
-            let toast = document.createElement('div');
-            toast.innerText = msg;
-            toast.style.position = 'fixed';
-            toast.style.bottom = '28px';
-            toast.style.left = '50%';
-            toast.style.transform = 'translateX(-50%)';
-            toast.style.backgroundColor = '#1f3e4c';
-            toast.style.color = '#f0f6fa';
-            toast.style.padding = '10px 26px';
-            toast.style.borderRadius = '60px';
-            toast.style.fontSize = '0.85rem';
-            toast.style.fontWeight = '500';
-            toast.style.zIndex = '10000';
-            toast.style.fontFamily = 'system-ui, -apple-system, "Segoe UI", sans-serif';
-            toast.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
-            toast.style.backdropFilter = 'blur(6px)';
-            toast.style.border = '1px solid #5685a0';
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.2s';
-                setTimeout(() => {
-                    if(document.body.contains(toast)) document.body.removeChild(toast);
-                }, 200);
-            }, duration);
-        }
-
-        // 简历下载模拟按钮 (交互)
-        const resumeBtn = document.getElementById('resumeDownload');
-        if(resumeBtn) {
-            resumeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showMessage('📄 电子简历 (PDF模拟) —— 您也可以通过邮箱索取详细版本，感谢关注', 3000);
-                // 可以添加真实简历下载逻辑，这里仅做优雅反馈
-            });
-        }
-
-        // 微信二维码模拟
-        const wechatBtn = document.getElementById('wechatMockBtn');
-        if(wechatBtn) {
-            wechatBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showMessage('📱 微信号: Yuchen_lin_code (添加请备注"技术交流")', 2800);
-            });
-        }
-
-        // 额外小彩蛋: 键盘快捷键显示vercel部署小贴士
-        window.addEventListener('keydown', (e) => {
-            if(e.ctrlKey && e.shiftKey && e.key === 'V') {
-                e.preventDefault();
-                showMessage('🚀 Vercel 部署技巧: 将本HTML文件放入项目根目录，连接Git仓库后自动识别，或者直接拖拽文件夹到vercel CLI发布!', 4000);
-            }
+    // FAQ 折叠功能
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.classList.toggle('show');
         });
+    });
 
-        // 控制台友好提示
-        console.log('✨ 个人简介页面已加载 | 完全封装HTML/CSS/JS | 适配移动端 | 轻松部署到 Vercel');
-    })();
+    // 微信按钮提示
+    document.getElementById('wechatBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('微信号: zhangmx_dev (添加请备注"技术交流")');
+    });
 </script>
 </body>
 </html>
